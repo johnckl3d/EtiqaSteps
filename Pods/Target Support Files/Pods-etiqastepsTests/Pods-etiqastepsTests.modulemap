@@ -1,0 +1,6 @@
+framework module Pods_etiqastepsTests {
+  umbrella header "Pods-etiqastepsTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

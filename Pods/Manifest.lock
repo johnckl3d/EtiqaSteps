@@ -1,0 +1,16 @@
+PODS:
+  - DeployGateSDK (1.0.7)
+
+DEPENDENCIES:
+  - DeployGateSDK
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - DeployGateSDK
+
+SPEC CHECKSUMS:
+  DeployGateSDK: df3d5838db7e35c05a711c35a3bdeef3c2b016ba
+
+PODFILE CHECKSUM: ee4565f6360bb303045aafaef06cd8638dee5892
+
+COCOAPODS: 1.5.0

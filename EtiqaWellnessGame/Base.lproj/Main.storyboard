@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -45,24 +44,42 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <segue destination="7zf-6b-iEC" kind="show" identifier="mainToGame" id="pkv-tT-4bE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="jO3-fv-nWB">
+        <!--Game View Controller-->
+        <scene sceneID="E64-qV-MJX">
             <objects>
-                <viewController id="fxF-RU-vjG" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="SdO-RK-z2N">
+                <viewController id="7zf-6b-iEC" customClass="GameViewController" customModule="etiqasteps" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Cc-ev-1WW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4d-78-wsn">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </skView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="SBg-0m-1Zz"/>
+                        <constraints>
+                            <constraint firstItem="l4d-78-wsn" firstAttribute="leading" secondItem="bBI-SX-gmp" secondAttribute="leading" id="MVP-Ry-i5X"/>
+                            <constraint firstItem="l4d-78-wsn" firstAttribute="top" secondItem="bBI-SX-gmp" secondAttribute="top" id="RNm-rS-kX7"/>
+                            <constraint firstItem="l4d-78-wsn" firstAttribute="trailing" secondItem="bBI-SX-gmp" secondAttribute="trailing" id="TLi-bM-0o0"/>
+                            <constraint firstItem="bBI-SX-gmp" firstAttribute="bottom" secondItem="l4d-78-wsn" secondAttribute="bottom" id="Vtt-pN-pvP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bBI-SX-gmp"/>
                     </view>
+                    <connections>
+                        <outlet property="skView" destination="l4d-78-wsn" id="g8Y-Pk-i9q"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="gameToMain" id="Khf-IR-RJ5"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8wO-jJ-duF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zFk-KI-N4U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="671" y="34"/>
+            <point key="canvasLocation" x="1554" y="-35"/>
         </scene>
     </scenes>
 </document>

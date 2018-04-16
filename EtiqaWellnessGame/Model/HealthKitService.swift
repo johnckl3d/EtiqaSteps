@@ -38,9 +38,12 @@ class HealthKitServices {
         
         let query = HKStatisticsQuery(quantityType: sampleType!, quantitySamplePredicate: predicate, options: .cumulativeSum){query, results, error in
             
-            guard let results = results, let totalSteps = results.sumQuantity() else {
-                print("error")
+            guard let results = results else {
                 completionHandler(0.0, (error as! NSError))
+                return
+            }
+            guard let totalSteps = results.sumQuantity() else {
+                completionHandler(0.0, nil)
                 return
             }
             DispatchQueue.main.async {

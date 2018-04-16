@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5081EF79B944A628CAD95DE1 /* Pods_etiqastepsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA26FB5C39E928054D5162B1 /* Pods_etiqastepsUITests.framework */; };
+		B000D441207F80EF009C0B45 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B000D440207F80EF009C0B45 /* Double+Extension.swift */; };
 		B0074883207F013700CBAC43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0074882207F013700CBAC43 /* AppDelegate.swift */; };
 		B0074885207F013700CBAC43 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0074884207F013700CBAC43 /* MasterViewController.swift */; };
 		B0074888207F013700CBAC43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0074886207F013700CBAC43 /* Main.storyboard */; };
@@ -28,6 +30,16 @@
 		B00748CC207F097900CBAC43 /* LanguageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00748CB207F097900CBAC43 /* LanguageConstants.swift */; };
 		B00748CF207F0BEA00CBAC43 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00748CE207F0BEA00CBAC43 /* HealthKit.framework */; };
 		B00748D2207F22D800CBAC43 /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00748D1207F22D800CBAC43 /* HealthKitService.swift */; };
+		B0074932207F41AC00CBAC43 /* GameHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B007492A207F41AB00CBAC43 /* GameHandler.swift */; };
+		B0074933207F41AC00CBAC43 /* FlowerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B007492B207F41AB00CBAC43 /* FlowerNode.swift */; };
+		B0074934207F41AC00CBAC43 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B007492C207F41AB00CBAC43 /* GameViewController.swift */; };
+		B0074935207F41AC00CBAC43 /* GameElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = B007492D207F41AB00CBAC43 /* GameElements.swift */; };
+		B0074936207F41AC00CBAC43 /* GenericNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B007492E207F41AB00CBAC43 /* GenericNode.swift */; };
+		B0074937207F41AC00CBAC43 /* Level01.plist in Resources */ = {isa = PBXBuildFile; fileRef = B007492F207F41AB00CBAC43 /* Level01.plist */; };
+		B0074938207F41AC00CBAC43 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0074930207F41AB00CBAC43 /* GameScene.swift */; };
+		B0074939207F41AC00CBAC43 /* PlatformNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0074931207F41AC00CBAC43 /* PlatformNode.swift */; };
+		B99A2896A599EBDACBBD9E48 /* Pods_etiqasteps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F24C16EB8C702060B2122CF7 /* Pods_etiqasteps.framework */; };
+		F95B2E044568C5E6736D7882 /* Pods_etiqastepsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4301A50CF3F3DBC8EFB02DD /* Pods_etiqastepsTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +60,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		23E2E4551FDFDDE38884B0BA /* Pods-etiqastepsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-etiqastepsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-etiqastepsTests/Pods-etiqastepsTests.release.xcconfig"; sourceTree = "<group>"; };
+		2A8EE3612375368ED40DCCC3 /* Pods-etiqasteps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-etiqasteps.debug.xcconfig"; path = "Pods/Target Support Files/Pods-etiqasteps/Pods-etiqasteps.debug.xcconfig"; sourceTree = "<group>"; };
+		45613BDB7FDCA1BDB8E76503 /* Pods-etiqastepsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-etiqastepsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-etiqastepsUITests/Pods-etiqastepsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		534F75026336786EC0873872 /* Pods-etiqastepsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-etiqastepsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-etiqastepsUITests/Pods-etiqastepsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		89F9137450A03A15BE1CC7B8 /* Pods-etiqastepsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-etiqastepsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-etiqastepsTests/Pods-etiqastepsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AA26FB5C39E928054D5162B1 /* Pods_etiqastepsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_etiqastepsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B000D440207F80EF009C0B45 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		B007487F207F013700CBAC43 /* etiqasteps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = etiqasteps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0074882207F013700CBAC43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0074884207F013700CBAC43 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +95,18 @@
 		B00748CE207F0BEA00CBAC43 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		B00748D0207F0BEA00CBAC43 /* etiqasteps.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = etiqasteps.entitlements; sourceTree = "<group>"; };
 		B00748D1207F22D800CBAC43 /* HealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
+		B007492A207F41AB00CBAC43 /* GameHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameHandler.swift; sourceTree = "<group>"; };
+		B007492B207F41AB00CBAC43 /* FlowerNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowerNode.swift; sourceTree = "<group>"; };
+		B007492C207F41AB00CBAC43 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		B007492D207F41AB00CBAC43 /* GameElements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameElements.swift; sourceTree = "<group>"; };
+		B007492E207F41AB00CBAC43 /* GenericNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericNode.swift; sourceTree = "<group>"; };
+		B007492F207F41AB00CBAC43 /* Level01.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Level01.plist; sourceTree = "<group>"; };
+		B0074930207F41AB00CBAC43 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		B0074931207F41AC00CBAC43 /* PlatformNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformNode.swift; sourceTree = "<group>"; };
+		B08058862080B78C006CA1FE /* etiqasteps-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "etiqasteps-Bridging-Header.h"; sourceTree = "<group>"; };
+		BD886C6CDCEA92F827B6A33A /* Pods-etiqasteps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-etiqasteps.release.xcconfig"; path = "Pods/Target Support Files/Pods-etiqasteps/Pods-etiqasteps.release.xcconfig"; sourceTree = "<group>"; };
+		E4301A50CF3F3DBC8EFB02DD /* Pods_etiqastepsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_etiqastepsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F24C16EB8C702060B2122CF7 /* Pods_etiqasteps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_etiqasteps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +115,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B00748CF207F0BEA00CBAC43 /* HealthKit.framework in Frameworks */,
+				B99A2896A599EBDACBBD9E48 /* Pods_etiqasteps.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F95B2E044568C5E6736D7882 /* Pods_etiqastepsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,12 +131,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5081EF79B944A628CAD95DE1 /* Pods_etiqastepsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		98100E2E79AF425C773067F1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2A8EE3612375368ED40DCCC3 /* Pods-etiqasteps.debug.xcconfig */,
+				BD886C6CDCEA92F827B6A33A /* Pods-etiqasteps.release.xcconfig */,
+				89F9137450A03A15BE1CC7B8 /* Pods-etiqastepsTests.debug.xcconfig */,
+				23E2E4551FDFDDE38884B0BA /* Pods-etiqastepsTests.release.xcconfig */,
+				45613BDB7FDCA1BDB8E76503 /* Pods-etiqastepsUITests.debug.xcconfig */,
+				534F75026336786EC0873872 /* Pods-etiqastepsUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B000D43F207F80DA009C0B45 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B000D440207F80EF009C0B45 /* Double+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		B0074876207F013700CBAC43 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +168,7 @@
 				B00748A1207F013900CBAC43 /* etiqastepsUITests */,
 				B0074880207F013700CBAC43 /* Products */,
 				B00748CD207F0BEA00CBAC43 /* Frameworks */,
+				98100E2E79AF425C773067F1 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,14 +185,17 @@
 		B0074881207F013700CBAC43 /* EtiqaWellnessGame */ = {
 			isa = PBXGroup;
 			children = (
+				B08058862080B78C006CA1FE /* etiqasteps-Bridging-Header.h */,
+				B000D43F207F80DA009C0B45 /* Extensions */,
+				B007493B207F41DB00CBAC43 /* Game */,
+				B007492F207F41AB00CBAC43 /* Level01.plist */,
 				B00748D3207F237E00CBAC43 /* Model */,
 				B00748CA207F095300CBAC43 /* Constants */,
 				B00748B3207F071000CBAC43 /* Resources */,
 				B00748B2207F01F900CBAC43 /* Services */,
 				B0074882207F013700CBAC43 /* AppDelegate.swift */,
-				B0074884207F013700CBAC43 /* MasterViewController.swift */,
+				B007493A207F41C300CBAC43 /* Controllers */,
 				B0074886207F013700CBAC43 /* Main.storyboard */,
-				B0074889207F013900CBAC43 /* Assets.xcassets */,
 				B007488B207F013900CBAC43 /* LaunchScreen.storyboard */,
 				B007488E207F013900CBAC43 /* Info.plist */,
 			);
@@ -172,16 +231,9 @@
 		B00748B3207F071000CBAC43 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B00748BB207F084900CBAC43 /* UIButtonX.swift */,
-				B00748B7207F084900CBAC43 /* UIImageViewX.swift */,
-				B00748BF207F084A00CBAC43 /* UILabelX.swift */,
-				B00748BA207F084900CBAC43 /* UISliderX.swift */,
-				B00748B9207F084900CBAC43 /* UITextFieldX.swift */,
-				B00748BD207F084900CBAC43 /* UIViewAnchorPoint.swift */,
-				B00748B8207F084900CBAC43 /* UIViewControllerX.swift */,
-				B00748B6207F084900CBAC43 /* UIViewX.swift */,
-				B00748BE207F084900CBAC43 /* UIViewXRadialGradient.swift */,
-				B00748BC207F084900CBAC43 /* UIVisualEffectViewX.swift */,
+				B0074889207F013900CBAC43 /* Assets.xcassets */,
+				B0074929207F412700CBAC43 /* Assets */,
+				B0074928207F410E00CBAC43 /* DesignableX */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -198,6 +250,9 @@
 			isa = PBXGroup;
 			children = (
 				B00748CE207F0BEA00CBAC43 /* HealthKit.framework */,
+				F24C16EB8C702060B2122CF7 /* Pods_etiqasteps.framework */,
+				E4301A50CF3F3DBC8EFB02DD /* Pods_etiqastepsTests.framework */,
+				AA26FB5C39E928054D5162B1 /* Pods_etiqastepsUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -210,6 +265,52 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		B0074928207F410E00CBAC43 /* DesignableX */ = {
+			isa = PBXGroup;
+			children = (
+				B00748BB207F084900CBAC43 /* UIButtonX.swift */,
+				B00748B7207F084900CBAC43 /* UIImageViewX.swift */,
+				B00748BF207F084A00CBAC43 /* UILabelX.swift */,
+				B00748BA207F084900CBAC43 /* UISliderX.swift */,
+				B00748B9207F084900CBAC43 /* UITextFieldX.swift */,
+				B00748BD207F084900CBAC43 /* UIViewAnchorPoint.swift */,
+				B00748B8207F084900CBAC43 /* UIViewControllerX.swift */,
+				B00748B6207F084900CBAC43 /* UIViewX.swift */,
+				B00748BE207F084900CBAC43 /* UIViewXRadialGradient.swift */,
+				B00748BC207F084900CBAC43 /* UIVisualEffectViewX.swift */,
+			);
+			path = DesignableX;
+			sourceTree = "<group>";
+		};
+		B0074929207F412700CBAC43 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		B007493A207F41C300CBAC43 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B0074884207F013700CBAC43 /* MasterViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B007493B207F41DB00CBAC43 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				B007492B207F41AB00CBAC43 /* FlowerNode.swift */,
+				B007492D207F41AB00CBAC43 /* GameElements.swift */,
+				B007492A207F41AB00CBAC43 /* GameHandler.swift */,
+				B0074930207F41AB00CBAC43 /* GameScene.swift */,
+				B007492C207F41AB00CBAC43 /* GameViewController.swift */,
+				B007492E207F41AB00CBAC43 /* GenericNode.swift */,
+				B0074931207F41AC00CBAC43 /* PlatformNode.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -217,9 +318,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B00748A7207F013900CBAC43 /* Build configuration list for PBXNativeTarget "etiqasteps" */;
 			buildPhases = (
+				D6BECA8DA8EC140209A1D707 /* [CP] Check Pods Manifest.lock */,
 				B007487B207F013700CBAC43 /* Sources */,
 				B007487C207F013700CBAC43 /* Frameworks */,
 				B007487D207F013700CBAC43 /* Resources */,
+				1978C089533BEBDEC4BF064B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,6 +337,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B00748AA207F013900CBAC43 /* Build configuration list for PBXNativeTarget "etiqastepsTests" */;
 			buildPhases = (
+				77A27DF4AAA972E78B0ECAC6 /* [CP] Check Pods Manifest.lock */,
 				B007488F207F013900CBAC43 /* Sources */,
 				B0074890207F013900CBAC43 /* Frameworks */,
 				B0074891207F013900CBAC43 /* Resources */,
@@ -252,6 +356,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B00748AD207F013900CBAC43 /* Build configuration list for PBXNativeTarget "etiqastepsUITests" */;
 			buildPhases = (
+				CF98840C36DD5A3DF74736A1 /* [CP] Check Pods Manifest.lock */,
 				B007489A207F013900CBAC43 /* Sources */,
 				B007489B207F013900CBAC43 /* Frameworks */,
 				B007489C207F013900CBAC43 /* Resources */,
@@ -278,6 +383,7 @@
 				TargetAttributes = {
 					B007487E207F013700CBAC43 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 						SystemCapabilities = {
 							com.apple.HealthKit = {
 								enabled = 1;
@@ -319,6 +425,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0074937207F41AC00CBAC43 /* Level01.plist in Resources */,
 				B007488D207F013900CBAC43 /* LaunchScreen.storyboard in Resources */,
 				B007488A207F013900CBAC43 /* Assets.xcassets in Resources */,
 				B0074888207F013700CBAC43 /* Main.storyboard in Resources */,
@@ -341,6 +448,83 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1978C089533BEBDEC4BF064B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-etiqasteps/Pods-etiqasteps-resources.sh",
+				"${PODS_ROOT}/DeployGateSDK/DeployGateSDK1.0.7.embeddedframework/DeployGateSDK.framework/Versions/A/Resources/en.lproj",
+				"${PODS_ROOT}/DeployGateSDK/DeployGateSDK1.0.7.embeddedframework/DeployGateSDK.framework/Versions/A/Resources/ja.lproj",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ja.lproj",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-etiqasteps/Pods-etiqasteps-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		77A27DF4AAA972E78B0ECAC6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-etiqastepsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF98840C36DD5A3DF74736A1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-etiqastepsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6BECA8DA8EC140209A1D707 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-etiqasteps-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B007487B207F013700CBAC43 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -349,11 +533,19 @@
 				B00748B1207F01F200CBAC43 /* HealthKitSetupAssistant.swift in Sources */,
 				B00748C1207F084A00CBAC43 /* UIImageViewX.swift in Sources */,
 				B00748C8207F084A00CBAC43 /* UIViewXRadialGradient.swift in Sources */,
+				B0074936207F41AC00CBAC43 /* GenericNode.swift in Sources */,
 				B00748D2207F22D800CBAC43 /* HealthKitService.swift in Sources */,
+				B0074934207F41AC00CBAC43 /* GameViewController.swift in Sources */,
+				B0074935207F41AC00CBAC43 /* GameElements.swift in Sources */,
+				B0074932207F41AC00CBAC43 /* GameHandler.swift in Sources */,
+				B0074933207F41AC00CBAC43 /* FlowerNode.swift in Sources */,
 				B00748C6207F084A00CBAC43 /* UIVisualEffectViewX.swift in Sources */,
 				B00748C0207F084A00CBAC43 /* UIViewX.swift in Sources */,
 				B00748C4207F084A00CBAC43 /* UISliderX.swift in Sources */,
+				B0074939207F41AC00CBAC43 /* PlatformNode.swift in Sources */,
+				B0074938207F41AC00CBAC43 /* GameScene.swift in Sources */,
 				B00748C2207F084A00CBAC43 /* UIViewControllerX.swift in Sources */,
+				B000D441207F80EF009C0B45 /* Double+Extension.swift in Sources */,
 				B00748C7207F084A00CBAC43 /* UIViewAnchorPoint.swift in Sources */,
 				B00748C9207F084A00CBAC43 /* UILabelX.swift in Sources */,
 				B00748CC207F097900CBAC43 /* LanguageConstants.swift in Sources */,
@@ -466,11 +658,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "etiqasteps/etiqasteps-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -520,10 +713,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "etiqasteps/etiqasteps-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -531,8 +725,10 @@
 		};
 		B00748A8207F013900CBAC43 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A8EE3612375368ED40DCCC3 /* Pods-etiqasteps.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = etiqasteps.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D93T95NM9B;
@@ -543,6 +739,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncheang.etiqasteps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EtiqaWellnessGame/etiqasteps-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -550,8 +748,10 @@
 		};
 		B00748A9207F013900CBAC43 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD886C6CDCEA92F827B6A33A /* Pods-etiqasteps.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = etiqasteps.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D93T95NM9B;
@@ -562,6 +762,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.johncheang.etiqasteps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EtiqaWellnessGame/etiqasteps-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -569,6 +770,7 @@
 		};
 		B00748AB207F013900CBAC43 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89F9137450A03A15BE1CC7B8 /* Pods-etiqastepsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -590,6 +792,7 @@
 		};
 		B00748AC207F013900CBAC43 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23E2E4551FDFDDE38884B0BA /* Pods-etiqastepsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -611,6 +814,7 @@
 		};
 		B00748AE207F013900CBAC43 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45613BDB7FDCA1BDB8E76503 /* Pods-etiqastepsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -631,6 +835,7 @@
 		};
 		B00748AF207F013900CBAC43 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 534F75026336786EC0873872 /* Pods-etiqastepsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
