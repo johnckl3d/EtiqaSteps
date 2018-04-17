@@ -14,8 +14,6 @@ class GameHandler {
     var itemsCollected: Int
     var steps: Int
     
-    var levelData: NSDictionary!
-    
     static let sharedInstance = GameHandler()
     
     private init() {
@@ -28,11 +26,7 @@ class GameHandler {
         pedoStepsHighScore = defaults.integer(forKey: "pedoStepsHighScore")
         itemsCollected = defaults.integer(forKey: "flowers")
         steps = defaults.integer(forKey: "stepsCount")
-        if let path = Bundle.main.path(forResource: "Level01", ofType: "plist"){
-            if let level = NSDictionary(contentsOfFile: path){
-                levelData = level
-            }
-        }
+       
     }
     
     func saveGameStats() {

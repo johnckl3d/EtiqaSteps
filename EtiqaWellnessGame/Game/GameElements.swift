@@ -59,11 +59,12 @@ extension GameScene {
         let playerNode = SKNode()
         playerNode.position = CGPoint(x: self.size.width / 2, y: 80)
         
-        let sprite = SKSpriteNode(imageNamed: "Player")
+        let sprite = SKSpriteNode(imageNamed: "player")
         playerNode.addChild(sprite)
         
         
         playerNode.physicsBody = SKPhysicsBody(circleOfRadius: sprite.size.width / 2)
+         //playerNode.physicsBody?.mass = 0.5
         playerNode.physicsBody?.isDynamic = false
         playerNode.physicsBody?.allowsRotation = false
         
@@ -122,15 +123,15 @@ extension GameScene {
 //        case carrots = 3
 //        case apple = 4
         if type == ItemType.vege  {
-            sprite = SKSpriteNode(imageNamed: "basketball")
+            sprite = SKSpriteNode(imageNamed: "pinkHeart")
         }else if type == ItemType.apple{
-            sprite = SKSpriteNode(imageNamed: "apple")
+            sprite = SKSpriteNode(imageNamed: "blueMelon")
         }else if type == ItemType.waterBottle{
-            sprite = SKSpriteNode(imageNamed: "waterbottle")
+            sprite = SKSpriteNode(imageNamed: "orangeSquare")
         }else if type == ItemType.carrots{
-            sprite = SKSpriteNode(imageNamed: "carrots")
+            sprite = SKSpriteNode(imageNamed: "pinkDiamond")
         }else {
-            sprite = SKSpriteNode(imageNamed: "vege")
+            sprite = SKSpriteNode(imageNamed: "redTriangle")
         }
         node.addChild(sprite)
         node.physicsBody = SKPhysicsBody(circleOfRadius: sprite.size.width / 2)

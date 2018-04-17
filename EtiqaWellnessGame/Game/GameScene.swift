@@ -41,6 +41,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var numberOfSteps:Int! = 0
     var nextStepsTarget: [Int] = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]
     
+    
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -50,8 +52,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         super.init(size: size)
         
         backgroundColor = SKColor.white
-        
-        let levelData = GameHandler.sharedInstance.levelData
         
         currentMaxY = 80
         GameHandler.sharedInstance.pedoSteps = 0
@@ -93,7 +93,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         stepsLabel.text = "registered steps: \(GameHandler.sharedInstance.steps)"
         hud.addChild(stepsLabel)
         
-       
+        
         
         detectedStepsLabel = SKLabelNode(fontNamed: "AmericanTypeWriter-Bold")
         detectedStepsLabel.fontSize = 12
@@ -115,51 +115,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         startTimer()
         
-        let platforms = levelData!["Platforms"] as! NSDictionary
-        let platformPatterns = platforms["Patterns"] as! NSDictionary
-        let platformPositions = platforms["Positions"] as! [NSDictionary]
-        
-        for platformPosition in platformPositions{
-            let x = platformPosition["x"] as! Float
-            let y = platformPosition["y"] as! Float
-            let pattern = platformPosition["pattern"] as! NSString
-            
-            let platformPattern = platformPatterns[pattern] as! [NSDictionary]
-            for platformPoint in platformPattern{
-                let xValue = platformPoint["x"] as! Float
-                let yValue = platformPoint["y"] as! Float
-                let type = PlatformType(rawValue: platformPoint["type"] as! Int)
-                let xPosition = CGFloat(xValue + x)
-                let yPosition = CGFloat(yValue + y)
-                
-                let platformNode = createPlatformAtPosition(position: CGPoint(x: xPosition, y: yPosition), ofType: type!)
-                foreground.addChild(platformNode)
-            }
-        }
-      
-        let flowers = levelData!["Flowers"] as! NSDictionary
-        let flowerPatterns = flowers["Patterns"] as! NSDictionary
-        let flowerPositions = flowers["Positions"] as! [NSDictionary]
-        
-        for flowerPosition in flowerPositions{
-            let x = flowerPosition["x"] as! Float
-            let y = flowerPosition["y"] as! Float
-            let pattern = flowerPosition["pattern"] as! NSString
-            
-            let flowerPattern = flowerPatterns[pattern] as! [NSDictionary]
-            for flowerPoint in flowerPattern{
-                let xValue = flowerPoint["x"] as! Float
-                let yValue = flowerPoint["y"] as! Float
-                //var type = ItemType(rawValue: flowerPoint["type"] as! Int)
-                let rand = arc4random_uniform(5)
-                let type = ItemType(rawValue: Int(rand))
-                let xPosition = CGFloat(xValue + x)
-                let yPosition = CGFloat(yValue + y)
-                
-                let flowerNode = createFlowerAtPosition(position: CGPoint(x: xPosition, y: yPosition), ofType: type!)
-                foreground.addChild(flowerNode)
-            }
-        }
+        generateLevel(val: 0)
         
         physicsWorld.gravity = CGVector(dx: 0, dy: -2)
         physicsWorld.contactDelegate  = self
@@ -174,7 +130,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     private func startCountingSteps(){
-       
+        
     }
     
     func viewWillLoad(gameVC:GameViewController){
@@ -214,11 +170,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             foreground.position = CGPoint(x: 0, y: -(player.position.y - 200))
         }
         
-//        if Int(player.position.y) > currentMaxY {
-//            GameHandler.sharedInstance.score += Int(player.position.y) - currentMaxY
-//            currentMaxY = Int(player.position.y)
-//            scoreLabel.text = "\(GameHandler.sharedInstance.score)"
-//        }
+        //        if Int(player.position.y) > currentMaxY {
+        //            GameHandler.sharedInstance.score += Int(player.position.y) - currentMaxY
+        //            currentMaxY = Int(player.position.y)
+        //            scoreLabel.text = "\(GameHandler.sharedInstance.score)"
+        //        }
         
         if Int(player.position.y) > endOfGamePosition, gameOver == false{
             onGameEndEvent()
@@ -241,9 +197,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func onGameStartEvent(){
-    let transition = SKTransition.fade(withDuration: 0.5)
-    let gameScene = GameScene(size: self.size)
-    self.view?.presentScene(gameScene, transition: transition)
+        let transition = SKTransition.fade(withDuration: 0.5)
+        let gameScene = GameScene(size: self.size)
+        self.view?.presentScene(gameScene, transition: transition)
     }
     
     override func didSimulatePhysics() {
@@ -304,7 +260,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         })
         startButton.removeFromParent()
         player.physicsBody?.isDynamic = true
-        player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 20))
+        player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 200))
     }
     
     func startTimer(){
@@ -328,6 +284,62 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     @objc func timerAction(timer:Timer){
         displayPedometerData()
     }
-
     
+    func generateLevel(val value:Int){
+        
+        if let path = Bundle.main.path(forResource: "Level01", ofType: "plist"){
+            if let level = NSDictionary(contentsOfFile: path){
+                let levelData:NSDictionary = level
+                if value == 1 {
+                    let platforms = levelData["Platforms"] as! NSDictionary
+                    let platformPatterns = platforms["Patterns"] as! NSDictionary
+                    let platformPositions = platforms["Positions"] as! [NSDictionary]
+                    
+                    for platformPosition in platformPositions{
+                        let x = platformPosition["x"] as! Float
+                        let y = platformPosition["y"] as! Float
+                        let pattern = platformPosition["pattern"] as! NSString
+                        
+                        let platformPattern = platformPatterns[pattern] as! [NSDictionary]
+                        for platformPoint in platformPattern{
+                            let xValue = platformPoint["x"] as! Float
+                            let yValue = platformPoint["y"] as! Float
+                            let type = PlatformType(rawValue: platformPoint["type"] as! Int)
+                            let xPosition = CGFloat(xValue + x)
+                            let yPosition = CGFloat(yValue + y)
+                            
+                            let platformNode = createPlatformAtPosition(position: CGPoint(x: xPosition, y: yPosition), ofType: type!)
+                            foreground.addChild(platformNode)
+                        }
+                    }
+                    
+                    let flowers = levelData["Flowers"] as! NSDictionary
+                    let flowerPatterns = flowers["Patterns"] as! NSDictionary
+                    let flowerPositions = flowers["Positions"] as! [NSDictionary]
+                    
+                    for flowerPosition in flowerPositions{
+                        let x = flowerPosition["x"] as! Float
+                        let y = flowerPosition["y"] as! Float
+                        let pattern = flowerPosition["pattern"] as! NSString
+                        
+                        let flowerPattern = flowerPatterns[pattern] as! [NSDictionary]
+                        for flowerPoint in flowerPattern{
+                            let xValue = flowerPoint["x"] as! Float
+                            let yValue = flowerPoint["y"] as! Float
+                            //var type = ItemType(rawValue: flowerPoint["type"] as! Int)
+                            let rand = arc4random_uniform(5)
+                            let type = ItemType(rawValue: Int(rand))
+                            let xPosition = CGFloat(xValue + x)
+                            let yPosition = CGFloat(yValue + y)
+                            
+                            let flowerNode = createFlowerAtPosition(position: CGPoint(x: xPosition, y: yPosition), ofType: type!)
+                            foreground.addChild(flowerNode)
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+    }
 }
