@@ -46,10 +46,19 @@ class GameViewController: UIViewController {
     func onGameEndEvent(){
         print("onGameEndEvent")
         var scores = [GameHandler.sharedInstance.pedoSteps, GameHandler.sharedInstance.itemsCollected, GameHandler.sharedInstance.steps]
+        let total = GameHandler.sharedInstance.pedoSteps + GameHandler.sharedInstance.itemsCollected + GameHandler.sharedInstance.steps
+        var validScore = 0
+        if total > 10000 {
+            validScore = 10000
+        }else{
+            validScore = total
+        }
         let multiLine = """
-        Score: \(scores[0])
+        Steps while playing: \(scores[0])
         Items collected: \(scores[1])
-        Steps: \(scores[2])
+        Steps during the day: \(scores[2])
+        Total score: \(total)
+        Valid wellness score: \(validScore)
         """
         let alertController = UIAlertController(title: "summary", message: "\(multiLine)", preferredStyle: UIAlertControllerStyle.alert)
         let okAction = UIAlertAction(title: "Play again", style: UIAlertActionStyle.default){ (action) in

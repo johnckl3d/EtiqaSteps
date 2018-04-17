@@ -14,8 +14,17 @@ extension GameScene {
         let backgroundNode = SKNode()
         let spacing = 64 * scaleFactor
         
-        for index in 0 ... 19 {
+        for index in 0 ... 20 {
             let node = SKSpriteNode(imageNamed: String(format: "Background%02d", index + 1))
+            node.setScale(scaleFactor)
+            node.anchorPoint = CGPoint(x: 0.5, y: 0)
+            node.position = CGPoint(x: self.size.width / 2, y: spacing * CGFloat(index))
+            
+            backgroundNode.addChild(node)
+        }
+        
+        for index in 21 ... 100 {
+            let node = SKSpriteNode(imageNamed: String(format: "Background%02d", 21))
             node.setScale(scaleFactor)
             node.anchorPoint = CGPoint(x: 0.5, y: 0)
             node.position = CGPoint(x: self.size.width / 2, y: spacing * CGFloat(index))
@@ -53,6 +62,16 @@ extension GameScene {
             midgroundNode.addChild(node)
         }
         return midgroundNode
+    }
+    
+    func createGradient () -> SKNode{
+        let gradientNode = SKNode()
+        let node = SKSpriteNode(imageNamed: String(format: "gradient"))
+        node.setScale(scaleFactor)
+        node.anchorPoint = CGPoint(x: 0.5, y: 1)
+        
+        gradientNode.addChild(node)
+        return gradientNode
     }
     
     func createPlayer () -> SKNode {

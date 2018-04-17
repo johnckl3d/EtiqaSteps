@@ -12,7 +12,6 @@
 		B0074883207F013700CBAC43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0074882207F013700CBAC43 /* AppDelegate.swift */; };
 		B0074885207F013700CBAC43 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0074884207F013700CBAC43 /* MasterViewController.swift */; };
 		B0074888207F013700CBAC43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0074886207F013700CBAC43 /* Main.storyboard */; };
-		B007488A207F013900CBAC43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0074889207F013900CBAC43 /* Assets.xcassets */; };
 		B007488D207F013900CBAC43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B007488B207F013900CBAC43 /* LaunchScreen.storyboard */; };
 		B0074898207F013900CBAC43 /* etiqastepsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0074897207F013900CBAC43 /* etiqastepsTests.swift */; };
 		B00748A3207F013900CBAC43 /* etiqastepsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00748A2207F013900CBAC43 /* etiqastepsUITests.swift */; };
@@ -35,10 +34,12 @@
 		B0074934207F41AC00CBAC43 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B007492C207F41AB00CBAC43 /* GameViewController.swift */; };
 		B0074935207F41AC00CBAC43 /* GameElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = B007492D207F41AB00CBAC43 /* GameElements.swift */; };
 		B0074936207F41AC00CBAC43 /* GenericNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B007492E207F41AB00CBAC43 /* GenericNode.swift */; };
-		B0074937207F41AC00CBAC43 /* Level01.plist in Resources */ = {isa = PBXBuildFile; fileRef = B007492F207F41AB00CBAC43 /* Level01.plist */; };
+		B0074937207F41AC00CBAC43 /* Level1.plist in Resources */ = {isa = PBXBuildFile; fileRef = B007492F207F41AB00CBAC43 /* Level1.plist */; };
 		B0074938207F41AC00CBAC43 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0074930207F41AB00CBAC43 /* GameScene.swift */; };
 		B0074939207F41AC00CBAC43 /* PlatformNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0074931207F41AC00CBAC43 /* PlatformNode.swift */; };
-		B0C0ECE42085C05F00A0FC89 /* Level02.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0C0ECE32085C05F00A0FC89 /* Level02.plist */; };
+		B0396B8D2086468B00952432 /* Level3.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0396B8C2086468B00952432 /* Level3.plist */; };
+		B0396B8F208658E100952432 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0396B8E208658E100952432 /* Images.xcassets */; };
+		B0C0ECE42085C05F00A0FC89 /* Level2.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0C0ECE32085C05F00A0FC89 /* Level2.plist */; };
 		B99A2896A599EBDACBBD9E48 /* Pods_etiqasteps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F24C16EB8C702060B2122CF7 /* Pods_etiqasteps.framework */; };
 		F95B2E044568C5E6736D7882 /* Pods_etiqastepsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4301A50CF3F3DBC8EFB02DD /* Pods_etiqastepsTests.framework */; };
 /* End PBXBuildFile section */
@@ -72,7 +73,6 @@
 		B0074882207F013700CBAC43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0074884207F013700CBAC43 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		B0074887207F013700CBAC43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B0074889207F013900CBAC43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B007488C207F013900CBAC43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B007488E207F013900CBAC43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0074893207F013900CBAC43 /* etiqastepsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = etiqastepsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,11 +101,13 @@
 		B007492C207F41AB00CBAC43 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		B007492D207F41AB00CBAC43 /* GameElements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameElements.swift; sourceTree = "<group>"; };
 		B007492E207F41AB00CBAC43 /* GenericNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericNode.swift; sourceTree = "<group>"; };
-		B007492F207F41AB00CBAC43 /* Level01.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Level01.plist; sourceTree = "<group>"; };
+		B007492F207F41AB00CBAC43 /* Level1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Level1.plist; sourceTree = "<group>"; };
 		B0074930207F41AB00CBAC43 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		B0074931207F41AC00CBAC43 /* PlatformNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformNode.swift; sourceTree = "<group>"; };
+		B0396B8C2086468B00952432 /* Level3.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Level3.plist; sourceTree = "<group>"; };
+		B0396B8E208658E100952432 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B08058862080B78C006CA1FE /* etiqasteps-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "etiqasteps-Bridging-Header.h"; sourceTree = "<group>"; };
-		B0C0ECE32085C05F00A0FC89 /* Level02.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Level02.plist; sourceTree = "<group>"; };
+		B0C0ECE32085C05F00A0FC89 /* Level2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Level2.plist; sourceTree = "<group>"; };
 		BD886C6CDCEA92F827B6A33A /* Pods-etiqasteps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-etiqasteps.release.xcconfig"; path = "Pods/Target Support Files/Pods-etiqasteps/Pods-etiqasteps.release.xcconfig"; sourceTree = "<group>"; };
 		E4301A50CF3F3DBC8EFB02DD /* Pods_etiqastepsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_etiqastepsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F24C16EB8C702060B2122CF7 /* Pods_etiqasteps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_etiqasteps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,8 +192,9 @@
 				B08058862080B78C006CA1FE /* etiqasteps-Bridging-Header.h */,
 				B000D43F207F80DA009C0B45 /* Extensions */,
 				B007493B207F41DB00CBAC43 /* Game */,
-				B007492F207F41AB00CBAC43 /* Level01.plist */,
-				B0C0ECE32085C05F00A0FC89 /* Level02.plist */,
+				B007492F207F41AB00CBAC43 /* Level1.plist */,
+				B0C0ECE32085C05F00A0FC89 /* Level2.plist */,
+				B0396B8C2086468B00952432 /* Level3.plist */,
 				B00748D3207F237E00CBAC43 /* Model */,
 				B00748CA207F095300CBAC43 /* Constants */,
 				B00748B3207F071000CBAC43 /* Resources */,
@@ -234,7 +237,7 @@
 		B00748B3207F071000CBAC43 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B0074889207F013900CBAC43 /* Assets.xcassets */,
+				B0396B8E208658E100952432 /* Images.xcassets */,
 				B0074929207F412700CBAC43 /* Assets */,
 				B0074928207F410E00CBAC43 /* DesignableX */,
 			);
@@ -428,11 +431,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0074937207F41AC00CBAC43 /* Level01.plist in Resources */,
+				B0074937207F41AC00CBAC43 /* Level1.plist in Resources */,
 				B007488D207F013900CBAC43 /* LaunchScreen.storyboard in Resources */,
-				B007488A207F013900CBAC43 /* Assets.xcassets in Resources */,
 				B0074888207F013700CBAC43 /* Main.storyboard in Resources */,
-				B0C0ECE42085C05F00A0FC89 /* Level02.plist in Resources */,
+				B0396B8F208658E100952432 /* Images.xcassets in Resources */,
+				B0C0ECE42085C05F00A0FC89 /* Level2.plist in Resources */,
+				B0396B8D2086468B00952432 /* Level3.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
