@@ -39,6 +39,7 @@
 		B0074939207F41AC00CBAC43 /* PlatformNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0074931207F41AC00CBAC43 /* PlatformNode.swift */; };
 		B0396B8D2086468B00952432 /* Level3.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0396B8C2086468B00952432 /* Level3.plist */; };
 		B0396B8F208658E100952432 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0396B8E208658E100952432 /* Images.xcassets */; };
+		B0396B912086682400952432 /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0396B902086682400952432 /* Slider.swift */; };
 		B0C0ECE42085C05F00A0FC89 /* Level2.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0C0ECE32085C05F00A0FC89 /* Level2.plist */; };
 		B99A2896A599EBDACBBD9E48 /* Pods_etiqasteps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F24C16EB8C702060B2122CF7 /* Pods_etiqasteps.framework */; };
 		F95B2E044568C5E6736D7882 /* Pods_etiqastepsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4301A50CF3F3DBC8EFB02DD /* Pods_etiqastepsTests.framework */; };
@@ -106,6 +107,7 @@
 		B0074931207F41AC00CBAC43 /* PlatformNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformNode.swift; sourceTree = "<group>"; };
 		B0396B8C2086468B00952432 /* Level3.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Level3.plist; sourceTree = "<group>"; };
 		B0396B8E208658E100952432 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B0396B902086682400952432 /* Slider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
 		B08058862080B78C006CA1FE /* etiqasteps-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "etiqasteps-Bridging-Header.h"; sourceTree = "<group>"; };
 		B0C0ECE32085C05F00A0FC89 /* Level2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Level2.plist; sourceTree = "<group>"; };
 		BD886C6CDCEA92F827B6A33A /* Pods-etiqasteps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-etiqasteps.release.xcconfig"; path = "Pods/Target Support Files/Pods-etiqasteps/Pods-etiqasteps.release.xcconfig"; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 				B007492C207F41AB00CBAC43 /* GameViewController.swift */,
 				B007492E207F41AB00CBAC43 /* GenericNode.swift */,
 				B0074931207F41AC00CBAC43 /* PlatformNode.swift */,
+				B0396B902086682400952432 /* Slider.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 				B0074932207F41AC00CBAC43 /* GameHandler.swift in Sources */,
 				B0074933207F41AC00CBAC43 /* FlowerNode.swift in Sources */,
 				B00748C6207F084A00CBAC43 /* UIVisualEffectViewX.swift in Sources */,
+				B0396B912086682400952432 /* Slider.swift in Sources */,
 				B00748C0207F084A00CBAC43 /* UIViewX.swift in Sources */,
 				B00748C4207F084A00CBAC43 /* UISliderX.swift in Sources */,
 				B0074939207F41AC00CBAC43 /* PlatformNode.swift in Sources */,

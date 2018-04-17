@@ -42,6 +42,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var numberOfSteps:Int! = 0
     var nextStepsTarget: [Int] = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]
     
+    var slider: Slider?
     
     
     required init?(coder aDecoder: NSCoder) {
@@ -117,7 +118,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         nextStepsLabel.position = CGPoint(x: self.size.width-20, y: self.size.height-80)
         nextStepsLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.right
         
-        nextStepsLabel.text = "next level: --"
+        nextStepsLabel.text = "total: --"
         hud.addChild(nextStepsLabel)
         
         startTimer()
@@ -135,6 +136,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 self.xAcceleration = (CGFloat(acceleration.x) * 0.75 + (self.xAcceleration * 0.25))
             }
         }
+        
+        slider = Slider(width: 250,height: 30, text: "progress:")
+        
+        slider!.position = CGPoint(x: self.size.width * 0.15, y: self.size.height-120)
+        slider?.setBackgroundColor(SKColor.red)
+        hud.addChild(slider!)
     }
     
     
@@ -231,36 +238,36 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if let pedData = pedometerData{
                 //print(pedData.numberOfSteps)
                 self.numberOfSteps = Int(pedData.numberOfSteps)
-                if self.numberOfSteps < 20 {
-                    self.nextStepsLabel.text = "next level: 20"
-                }
-                else if self.numberOfSteps < 50 {
-                    self.nextStepsLabel.text = "next level: 50"
-                }
-                else if self.numberOfSteps < 100 {
-                    self.nextStepsLabel.text = "next level: 100"
-                }
-                else if self.numberOfSteps < 500 {
-                    self.nextStepsLabel.text = "next level: 500"
-                }
-                else if self.numberOfSteps < 1000 {
-                    self.nextStepsLabel.text = "next level: 1000"
-                }
-                else if self.numberOfSteps < 3000 {
-                    self.nextStepsLabel.text = "next level: 3000"
-                }
-                else if self.numberOfSteps < 5000 {
-                    self.nextStepsLabel.text = "next level: 5000"
-                }
-                else if self.numberOfSteps < 7000 {
-                    self.nextStepsLabel.text = "next level: 7000"
-                }
-                else if self.numberOfSteps < 10000 {
-                    self.nextStepsLabel.text = "next level: 10000"
-                }
-                else {
-                    self.nextStepsLabel.text = "YOU HAVE ACHIEVED MAXIMUM WELLNESS!!"
-                }
+//                if self.numberOfSteps < 20 {
+//                    self.nextStepsLabel.text = "next level: 20"
+//                }
+//                else if self.numberOfSteps < 50 {
+//                    self.nextStepsLabel.text = "next level: 50"
+//                }
+//                else if self.numberOfSteps < 100 {
+//                    self.nextStepsLabel.text = "next level: 100"
+//                }
+//                else if self.numberOfSteps < 500 {
+//                    self.nextStepsLabel.text = "next level: 500"
+//                }
+//                else if self.numberOfSteps < 1000 {
+//                    self.nextStepsLabel.text = "next level: 1000"
+//                }
+//                else if self.numberOfSteps < 3000 {
+//                    self.nextStepsLabel.text = "next level: 3000"
+//                }
+//                else if self.numberOfSteps < 5000 {
+//                    self.nextStepsLabel.text = "next level: 5000"
+//                }
+//                else if self.numberOfSteps < 7000 {
+//                    self.nextStepsLabel.text = "next level: 7000"
+//                }
+//                else if self.numberOfSteps < 10000 {
+//                    self.nextStepsLabel.text = "next level: 10000"
+//                }
+//                else {
+//                    self.nextStepsLabel.text = "YOU HAVE ACHIEVED MAXIMUM WELLNESS!!"
+//                }
                 //GameHandler.sharedInstance.pedoSteps = Int(pedData.numberOfSteps)
                 
                 //self.stepsLabel.text = "Steps:\(pedData.numberOfSteps)"
@@ -292,6 +299,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if let numberOfSteps = self.numberOfSteps{
             detectedStepsLabel.text = String(format:"detected steps: %i",numberOfSteps)
         }
+        
+        var scores = [GameHandler.sharedInstance.pedoSteps, GameHandler.sharedInstance.itemsCollected, GameHandler.sharedInstance.steps]
+        let total = GameHandler.sharedInstance.pedoSteps + GameHandler.sharedInstance.itemsCollected + GameHandler.sharedInstance.steps
+        var validScore = 0
+        if total > 10000 {
+            validScore = 10000
+        }else{
+            validScore = total
+        }
+        slider?.value = CGFloat(validScore) * 0.0001
+        self.nextStepsLabel.text = "Total: \(total)/10000"
     }
     
     @objc func timerAction(timer:Timer){
