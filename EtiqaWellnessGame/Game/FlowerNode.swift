@@ -22,7 +22,9 @@ class FlowerNode: GenericNode {
     
     override func collisionWithPlayer(player: SKNode) -> Bool {
         player.physicsBody?.velocity = CGVector(dx: player.physicsBody!.velocity.dx , dy: 400)
+        if  GameHandler.sharedInstance.itemsCollected < 5000 {
           GameHandler.sharedInstance.itemsCollected += 1
+        }
 //        if flowerType == ItemType.basketball{
 //            GameHandler.sharedInstance.itemsCollected += 200
 //        } else if flowerType == ItemType.waterBottle{

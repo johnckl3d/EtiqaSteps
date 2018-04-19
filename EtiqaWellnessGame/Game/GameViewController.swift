@@ -54,11 +54,11 @@ class GameViewController: UIViewController {
             validScore = total
         }
         let multiLine = """
-        Steps while playing: \(scores[0])
-        Items collected: \(scores[1])
-        Steps during the day: \(scores[2])
+        Apple health steps: \(scores[2])
+        Fruits: \(scores[1])
         Total score: \(total)
-        Valid wellness score: \(validScore)
+        Valid daily score: \(validScore)
+        Monthly target score: 14265/300000
         """
         let alertController = UIAlertController(title: "summary", message: "\(multiLine)", preferredStyle: UIAlertControllerStyle.alert)
         let okAction = UIAlertAction(title: "Play again", style: UIAlertActionStyle.default){ (action) in

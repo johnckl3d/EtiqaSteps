@@ -30,10 +30,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var itemsCollected:SKLabelNode!
     var stepsLabel:SKLabelNode!
     var detectedStepsLabel:SKLabelNode!
+    var monthlyStepsLabel:SKLabelNode!
     var nextStepsLabel:SKLabelNode!
-    var playerMaxY:Int!
     var gameOver = false
     var currentMaxY:Int!
+    var heightCheck:Int!
     
     var pedometer = CMPedometer()
     var timer = Timer()
@@ -73,7 +74,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player = createPlayer()
         player.position = CGPoint(x: self.size.width / 2, y: 300)
         foreGround.addChild(player)
-      
+        
         hud = SKNode()
         addChild(hud)
         
@@ -90,7 +91,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         itemsCollected.fontColor = SKColor.darkGray
         itemsCollected.position = CGPoint(x: 10, y: self.size.height-80)
         itemsCollected.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        itemsCollected.text = "items collected: \(GameHandler.sharedInstance.itemsCollected)"
+        itemsCollected.text = "Fruits: \(GameHandler.sharedInstance.itemsCollected)/5000"
         hud.addChild(itemsCollected)
         
         stepsLabel = SKLabelNode(fontNamed: "HelveticaNeue-Bold")
@@ -98,27 +99,35 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         stepsLabel.fontColor = SKColor.darkGray
         stepsLabel.position = CGPoint(x: 10, y: self.size.height-40)
         stepsLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        stepsLabel.text = "registered steps: \(GameHandler.sharedInstance.steps)"
+        stepsLabel.text = "Apple health steps: \(GameHandler.sharedInstance.steps)"
         hud.addChild(stepsLabel)
         
         
         
-        detectedStepsLabel = SKLabelNode(fontNamed: "HelveticaNeue-Bold")
-        detectedStepsLabel.fontSize = 15
-        detectedStepsLabel.fontColor = SKColor.darkGray
-        detectedStepsLabel.position = CGPoint(x: self.size.width-20, y: self.size.height-40)
-        detectedStepsLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.right
+        //        detectedStepsLabel = SKLabelNode(fontNamed: "HelveticaNeue-Bold")
+        //        detectedStepsLabel.fontSize = 15
+        //        detectedStepsLabel.fontColor = SKColor.darkGray
+        //        detectedStepsLabel.position = CGPoint(x: self.size.width-20, y: self.size.height-40)
+        //        detectedStepsLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.right
+        //
+        //        detectedStepsLabel.text = "detected steps: \(0 + 100)"
         
-        detectedStepsLabel.text = "detected steps: 0"
-        hud.addChild(detectedStepsLabel)
+        //      hud.addChild(detectedStepsLabel)
+        monthlyStepsLabel = SKLabelNode(fontNamed: "HelveticaNeue-Bold")
+        monthlyStepsLabel.fontSize = 15
+        monthlyStepsLabel.fontColor = SKColor.darkGray
+        monthlyStepsLabel.position = CGPoint(x: self.size.width-20, y: self.size.height-80)
+        monthlyStepsLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.right
+        monthlyStepsLabel.text = "Monthly: 14265/300000"
+        hud.addChild(monthlyStepsLabel)
         
         nextStepsLabel = SKLabelNode(fontNamed: "HelveticaNeue-Bold")
         nextStepsLabel.fontSize = 15
         nextStepsLabel.fontColor = SKColor.darkGray
-        nextStepsLabel.position = CGPoint(x: self.size.width-20, y: self.size.height-80)
+        nextStepsLabel.position = CGPoint(x: self.size.width-20, y: self.size.height-40)
         nextStepsLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.right
         
-        nextStepsLabel.text = "total: --"
+        nextStepsLabel.text = "Daily: --/10000"
         hud.addChild(nextStepsLabel)
         
         startTimer()
@@ -161,7 +170,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         updateHUD = (otherNode as! GenericNode).collisionWithPlayer(player: player)
         if updateHUD == true {
-            itemsCollected.text = "items collected: \(GameHandler.sharedInstance.itemsCollected)"
+            itemsCollected.text = "Fruits: \(GameHandler.sharedInstance.itemsCollected)/5000"
         }
         (otherNode as! GenericNode).collisionWithPlayer(player: player)
     }
@@ -190,9 +199,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if Int(player.position.y) > endOfLevelPosition, gameOver == false{
             //onGameEndEvent()
-//            if let child = self.childNode(withName: "object") as? SKSpriteNode {
-//                child.removeFromParent()
-//            }
+            //            if let child = self.childNode(withName: "object") as? SKSpriteNode {
+            //                child.removeFromParent()
+            //            }
             let n = Int(arc4random_uniform(3) + 1)
             generateLevel(val: n)
         }
@@ -208,8 +217,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.physicsBody!.isDynamic = false
         gameOver = true
         GameHandler.sharedInstance.saveGameStats()
-        itemsCollected.text = "items collected: \(GameHandler.sharedInstance.itemsCollected)"
-        detectedStepsLabel.text = String(format:"detected steps: %i",GameHandler.sharedInstance.pedoSteps)
+        itemsCollected.text = "Fruits: \(GameHandler.sharedInstance.itemsCollected)/5000"
+        //detectedStepsLabel.text = String(format:"detected steps: %i",GameHandler.sharedInstance.pedoSteps + 100)
         gameViewController?.onGameEndEvent()
     }
     
@@ -238,36 +247,36 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if let pedData = pedometerData{
                 //print(pedData.numberOfSteps)
                 self.numberOfSteps = Int(pedData.numberOfSteps)
-//                if self.numberOfSteps < 20 {
-//                    self.nextStepsLabel.text = "next level: 20"
-//                }
-//                else if self.numberOfSteps < 50 {
-//                    self.nextStepsLabel.text = "next level: 50"
-//                }
-//                else if self.numberOfSteps < 100 {
-//                    self.nextStepsLabel.text = "next level: 100"
-//                }
-//                else if self.numberOfSteps < 500 {
-//                    self.nextStepsLabel.text = "next level: 500"
-//                }
-//                else if self.numberOfSteps < 1000 {
-//                    self.nextStepsLabel.text = "next level: 1000"
-//                }
-//                else if self.numberOfSteps < 3000 {
-//                    self.nextStepsLabel.text = "next level: 3000"
-//                }
-//                else if self.numberOfSteps < 5000 {
-//                    self.nextStepsLabel.text = "next level: 5000"
-//                }
-//                else if self.numberOfSteps < 7000 {
-//                    self.nextStepsLabel.text = "next level: 7000"
-//                }
-//                else if self.numberOfSteps < 10000 {
-//                    self.nextStepsLabel.text = "next level: 10000"
-//                }
-//                else {
-//                    self.nextStepsLabel.text = "YOU HAVE ACHIEVED MAXIMUM WELLNESS!!"
-//                }
+                //                if self.numberOfSteps < 20 {
+                //                    self.nextStepsLabel.text = "next level: 20"
+                //                }
+                //                else if self.numberOfSteps < 50 {
+                //                    self.nextStepsLabel.text = "next level: 50"
+                //                }
+                //                else if self.numberOfSteps < 100 {
+                //                    self.nextStepsLabel.text = "next level: 100"
+                //                }
+                //                else if self.numberOfSteps < 500 {
+                //                    self.nextStepsLabel.text = "next level: 500"
+                //                }
+                //                else if self.numberOfSteps < 1000 {
+                //                    self.nextStepsLabel.text = "next level: 1000"
+                //                }
+                //                else if self.numberOfSteps < 3000 {
+                //                    self.nextStepsLabel.text = "next level: 3000"
+                //                }
+                //                else if self.numberOfSteps < 5000 {
+                //                    self.nextStepsLabel.text = "next level: 5000"
+                //                }
+                //                else if self.numberOfSteps < 7000 {
+                //                    self.nextStepsLabel.text = "next level: 7000"
+                //                }
+                //                else if self.numberOfSteps < 10000 {
+                //                    self.nextStepsLabel.text = "next level: 10000"
+                //                }
+                //                else {
+                //                    self.nextStepsLabel.text = "YOU HAVE ACHIEVED MAXIMUM WELLNESS!!"
+                //                }
                 //GameHandler.sharedInstance.pedoSteps = Int(pedData.numberOfSteps)
                 
                 //self.stepsLabel.text = "Steps:\(pedData.numberOfSteps)"
@@ -297,7 +306,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         timeElapsed += 1.0
         //Number of steps
         if let numberOfSteps = self.numberOfSteps{
-            detectedStepsLabel.text = String(format:"detected steps: %i",numberOfSteps)
+            //detectedStepsLabel.text = String(format:"detected steps: %i",numberOfSteps)
         }
         
         var scores = [GameHandler.sharedInstance.pedoSteps, GameHandler.sharedInstance.itemsCollected, GameHandler.sharedInstance.steps]
@@ -309,7 +318,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             validScore = total
         }
         slider?.value = CGFloat(validScore) * 0.0001
-        self.nextStepsLabel.text = "Total: \(total)/10000"
+        self.nextStepsLabel.text = "Daily: \(total)/10000"
     }
     
     @objc func timerAction(timer:Timer){
@@ -372,7 +381,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
                 let levelHeight = levelData!["EndOfLevel"] as! Int
                 endOfLevelPosition += levelHeight
-
+                
             }
         }
         
