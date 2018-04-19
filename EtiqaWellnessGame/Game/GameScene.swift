@@ -34,7 +34,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var nextStepsLabel:SKLabelNode!
     var gameOver = false
     var currentMaxY:Int!
-    var heightCheck:Int!
+    var heightCheck:CGFloat! = 0
     
     var pedometer = CMPedometer()
     var timer = Timer()
@@ -191,6 +191,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             foreGround.position = CGPoint(x: 0, y: -(player.position.y - 200))
         }
         
+        if player.position.y > heightCheck, gameOver == false{
+        heightCheck = player.position.y
+        }else{
+            let distance = heightCheck - player.position.y
+            if distance > 1200 {
+                onGameEndEvent()
+            }
+        }
         //        if Int(player.position.y) > currentMaxY {
         //            GameHandler.sharedInstance.score += Int(player.position.y) - currentMaxY
         //            currentMaxY = Int(player.position.y)

@@ -40,11 +40,12 @@ class GameViewController: UIViewController {
         let scene = GameScene(size: skView.bounds.size)
         scene.scaleMode = .aspectFit
         scene.viewWillLoad(gameVC: self)
+        skView.isPaused = false
         skView.presentScene(scene)
     }
     
     func onGameEndEvent(){
-        print("onGameEndEvent")
+        skView.isPaused = true
         var scores = [GameHandler.sharedInstance.pedoSteps, GameHandler.sharedInstance.itemsCollected, GameHandler.sharedInstance.steps]
         let total = GameHandler.sharedInstance.pedoSteps + GameHandler.sharedInstance.itemsCollected + GameHandler.sharedInstance.steps
         var validScore = 0
@@ -66,6 +67,7 @@ class GameViewController: UIViewController {
             var scene = GameScene(size: self.skView.bounds.size)
             scene.scaleMode = .aspectFit
             scene.viewWillLoad(gameVC: self)
+            self.skView.isPaused = false
             self.skView.presentScene(scene)
         }
         let cancelAction = UIAlertAction(title: "Leave game", style: UIAlertActionStyle.default){ (action) in

@@ -23,7 +23,7 @@ extension GameScene {
             backgroundNode.addChild(node)
         }
         
-        for index in 21 ... 100 {
+        for index in 21 ... 1000 {
             let node = SKSpriteNode(imageNamed: String(format: "Background%02d", 21))
             node.setScale(scaleFactor)
             node.anchorPoint = CGPoint(x: 0.5, y: 0)
