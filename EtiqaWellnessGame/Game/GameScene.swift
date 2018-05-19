@@ -62,7 +62,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gameOver = false
         
         scaleFactor = self.size.width / 320
-        backgroundScaleFactor = scaleFactor * 0.5
+        backgroundScaleFactor = scaleFactor
         background = createBackground()
         addChild(background)
         

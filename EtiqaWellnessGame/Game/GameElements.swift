@@ -12,7 +12,7 @@ extension GameScene {
     
     func createBackground () -> SKNode{
         let backgroundNode = SKNode()
-        let spacing = 128 * scaleFactor
+        let spacing = 64 * scaleFactor
         
         for index in 0 ... 24 {
             let node = SKSpriteNode(imageNamed: String(format: "Background%02d", index + 1))
