@@ -21,6 +21,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var hud: SKNode!
     var player: SKNode!
     var scaleFactor: CGFloat!
+    var backgroundScaleFactor: CGFloat!
     var startButton = SKSpriteNode(imageNamed: "playButton")
     var endOfLevelPosition = 0
     var motionManager = CMMotionManager()
@@ -61,6 +62,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gameOver = false
         
         scaleFactor = self.size.width / 320
+        backgroundScaleFactor = scaleFactor * 0.5
         background = createBackground()
         addChild(background)
         
